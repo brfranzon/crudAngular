@@ -1,37 +1,33 @@
-<div style="display: flex; flex-direction: column">
+<div style="height: 500px" class="addForm">
+  <h2 style="margin: auto; margin-bottom: 15px">Add a Product</h2>
   <form
     *ngIf="productForm"
     [formGroup]="productForm"
     (ngSubmit)="onSubmitProduct()"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    "
   >
-    <input formControlName="title" placeholder="title" />
-    <input formControlName="description" placeholder="description" />
-    <input formControlName="price" placeholder="price" />
-    <input formControlName="priorityDelivery" placeholder="priorityDelivery" />
+    <input formControlName="title" placeholder="Title" />
+    <input formControlName="description" placeholder="Description" />
+    <input formControlName="price" placeholder="Price" />
+    <input formControlName="priorityDelivery" placeholder="Priority" />
     <input
       formControlName="checkIfProductIsNotAvailable"
-      placeholder="checkIfProductIsNotAvailable"
+      placeholder="Available"
     />
-    <button type="submit">Add new Product</button>
+    <button
+      type="submit"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span> Confirm </span>
+    </button>
   </form>
 </div>
-
-<mat-card>
-  <form
-    class="form-content"
-    *ngIf="loginForm"
-    [formGroup]="loginForm"
-    (ngSubmit)="onSubmitX()"
-  >
-    <input matInput placeholder="Digite seu e-mail" formControlName="email" />
-
-    <input
-      type="password"
-      matInput
-      placeholder="Digite sua senha"
-      formControlName="password"
-    />
-
-    <input type="submit" />
-  </form>
-</mat-card>

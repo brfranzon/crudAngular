@@ -1,4 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  background: #efefef;;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+button {
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bolder;
+  background-color: blueviolet;
+  width: 120px;
+  height: 60px;
+  border: 2px solid white;
+}
+
+button:hover {
+  cursor: pointer;
+  color: blueviolet;
+  background-color: white;
+  border: 2px solid blueviolet;
+}
+
+input {
+  border: 2px solid purple;
+  padding: 10px;
+  width: 300px;
+}
+
+h3 {
+  color: red;
+  font-weight: bolder;
+  font-size: 22px !important;
+  margin-bottom: 4px !important;
+}
+
+h4 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 110px;
+  padding: 10px;
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

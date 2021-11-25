@@ -1,29 +1,62 @@
-<!-- <p>dashboard works!</p>
-
-<ul>
-  <li *ngFor="let product of allProducts">{{ product.title }}</li>
-</ul> -->
-
-<ul>
-  <li *ngFor="let product of dataSource">
-    <div style="display: flex;">
-      <div style="width: 500px;">
-        <span>{{ product.title }}</span>
-        <!-- <span>{{ product.description }}</span>
-        <span>{{ product.priorityDelivery }}</span>
-        <span>{{ product.checkIfProductIsNotAvailable }}</span>
-        <span>{{ product.price }}</span> -->
-      </div>
-      <div style="width: 200px; display: flex; justify-content: space-between;">
-        <button (click)="openEditForm(product)">EDIT</button>
-        <button (click)="deleteProduct(product)">DELETE</button>
+<p class="title"> Your Product Dashboard</p>
+<div class="dashboard" style="display: flex">
+  <div style="display: flex; flex-wrap: wrap">
+    <div *ngFor="let product of dataSource">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 500px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          margin-top: 20px;
+          margin-left: 20px;
+          height: 350px;
+          padding: 10px;
+          padding-left: 30px;
+        "
+      >
+        <div style="margin-bottom: 40px">
+          <h3>Title: {{ product.title }}</h3>
+          <div>
+            <h3>Description: {{ product.description }}</h3>
+            <h3
+              [ngStyle]="{
+                backgroundColor: getPriorityColor(product.priorityDelivery)
+              }"
+            >
+              Priority: {{ product.priorityDelivery }}
+            </h3>
+            <div style="margin-top: 50px">
+              <h4>Price: {{ product.price }}</h4>
+              <h4>Available: {{ product.checkIfProductIsNotAvailable }}</h4>
+            </div>
+          </div>
+        </div>
+        <div
+          style="width: 260px; display: flex; justify-content: space-between"
+        >
+          <button (click)="openEditForm(product)">EDIT</button>
+          <button (click)="deleteProduct(product)">DELETE</button>
+        </div>
       </div>
     </div>
-  </li>
-</ul>
-
-<button (click)="addForm()">ADD</button>
-
+    <button
+      (click)="addForm()"
+      style="
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        color: blueviolet;
+        margin-left: 20px;
+      "
+    >
+      <span style="font-size: 40px"> + </span>
+    </button>
+  </div>
+</div>
 
 <!-- title: string;
 description: string;

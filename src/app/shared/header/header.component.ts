@@ -1,4 +1,6 @@
+import { LoginService } from './../../service/login.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public isUserLoggedIn: boolean = false;
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.isUserLoggedIn);
+    this.loginService.showHeaderMenu.subscribe(showMenu => { console.log('event', showMenu); this.isUserLoggedIn = showMenu })
+  }
+
+  goToAddForm() {
+    this.router.navigate(['add-form']);
+  }
+
+  userLogout() {
+    this.loginService.userLogout();
   }
 
 }

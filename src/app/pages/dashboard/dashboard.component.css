@@ -1,0 +1,25 @@
+.dashboard {
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+.title {
+  /*
+
+
+  font-size: 70px;
+  font-weight: bold;
+  color: transparent;
+  text-align: center;
+  letter-spacing: 5px; */
+  /* text-shadow: 0 0 8px #316472; */
+  /* display: block; */
+  margin-bottom: 100px;
+  /* margin: 11px 0 17px 0; */
+  font-size: 90px;
+  line-height: 80px;
+  color: blueviolet;
+  display: flex;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  /* text-shadow: 10px 23.36px 8.896px #c4c4c4,0 -2px 1px rgb(167, 50, 50); */
+}

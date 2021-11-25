@@ -1,0 +1,7 @@
+.editForm {
+  animation-name: fadein;
+  animation-duration: 2s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 40px;
+  margin-top: 100px;
+}

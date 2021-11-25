@@ -1,8 +1,53 @@
-<div style="display: flex; flex-direction: column">
+<!-- <div style="display: flex; flex-direction: column" class="editForm">
   <input value=" {{ productToBeUpdated?._id }}" />
   <input value=" {{ productToBeUpdated?.title }}" />
   <input value=" {{ productToBeUpdated?.description }}" />
   <input value=" {{ productToBeUpdated?.price }}" />
-</div>
+</div> -->
 
-<button (click)="confirmEdit(productToBeUpdated?._id!)">Confirm</button>
+<!-- <button (click)="confirmEdit(productToBeUpdated?._id!)">Confirm</button> -->
+
+<div
+  style="height: 500px; display: flex; flex-direction: column"
+  class="editForm"
+>
+  <h2 style="margin: auto; margin-bottom: 15px">Edit the Product</h2>
+  <form
+    *ngIf="productForm"
+    [formGroup]="productForm"
+    (ngSubmit)="confirmEdit(productToBeUpdated?._id!)"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    "
+  >
+    <input
+      value=" {{ productToBeUpdated?.title }}"
+      formControlName="title"
+      placeholder="Title"
+    />
+    <input
+      value=" {{ productToBeUpdated?.description }}"
+      formControlName="description"
+      placeholder="Description"
+    />
+    <input
+      value=" {{ productToBeUpdated?.price }}"
+      formControlName="price"
+      placeholder="Price"
+    />
+    <input
+      value=" {{ productToBeUpdated?.priorityDelivery }}"
+      formControlName="priorityDelivery"
+      placeholder="Priority"
+    />
+    <input
+      value=" {{ productToBeUpdated?.checkIfProductIsNotAvailable }}"
+      formControlName="checkIfProductIsNotAvailable"
+      placeholder="Available"
+    />
+    <button type="submit">Confirm</button>
+  </form>
+</div>

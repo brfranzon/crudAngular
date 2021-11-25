@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BackgroundColorDirective } from '../directives/background-color.directive';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     DashboardComponent,
     EditFormComponent,
-    AddFormComponent
+    AddFormComponent,
+    BackgroundColorDirective
   ],
   exports:[
     LoginComponent,

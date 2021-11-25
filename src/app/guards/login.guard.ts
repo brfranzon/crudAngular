@@ -18,7 +18,7 @@ export class LoginGuard implements CanActivate {
     state: RouterStateSnapshot): any {
 
     if (!this.loginService.userLoggedIn()) {
-      this.router.navigate(['login'])
+      this.router.navigate([''])
     } else {
       return true;
     }

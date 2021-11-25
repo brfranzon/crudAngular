@@ -11,18 +11,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AddFormComponent implements OnInit {
 
-  loginForm?: FormGroup;
   productForm?: FormGroup;
-
 
   constructor(private apiProductsService: ApiProductsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      'email': new FormControl(null),
-      'password': new FormControl(null),
-    });
-
     this.productForm = new FormGroup({
       'title': new FormControl(null),
       'description': new FormControl(null),
@@ -33,16 +26,6 @@ export class AddFormComponent implements OnInit {
   }
 
   addProduct(myNewProduct: Products) {
-    // const myNewProduct: Products = {
-    //   title: "Pitanta",
-    //   description: "Pitanga preta docinha",
-    //   price: 44,
-    //   priorityDelivery: "low",
-    //   checkIfProductIsNotAvailable: true
-    // }
-
-    console.log(myNewProduct)
-
     this.apiProductsService.createProduct(myNewProduct).subscribe(
       res => {
         console.log('New product created', res);
@@ -53,14 +36,7 @@ export class AddFormComponent implements OnInit {
     )
   }
 
-  onSubmitX() {
-
-    const email = this.loginForm?.controls['email'].value;
-    const password = this.loginForm?.controls['password'].value;
-    console.log('submit', email, password);
-
-  }
-  onSubmitProduct() {
+   onSubmitProduct() {
     const title = this.productForm?.controls['title'].value;
     const description = this.productForm?.controls['description'].value;
     const priorityDelivery = this.productForm?.controls['title'].value;

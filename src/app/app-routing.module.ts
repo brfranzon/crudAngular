@@ -7,10 +7,12 @@ import { EditFormComponent } from './pages/edit-form/edit-form.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'edit-form/:id', component: EditFormComponent},
-  { path: 'add-form', component: AddFormComponent},
+  { path: '', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent,
+  // canActivate: [LoginGuard]
+  },
+  { path: 'edit-form/:id', component: EditFormComponent },
+  { path: 'add-form', component: AddFormComponent },
 
 ];
 

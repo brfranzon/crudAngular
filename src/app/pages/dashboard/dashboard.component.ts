@@ -1,6 +1,7 @@
+import { Products } from './../../models/products-model';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Products } from 'src/app/models/products-model';
 import { ApiProductsService } from 'src/app/service/api-products.service';
 
 export interface PeriodicElement {
@@ -23,13 +24,14 @@ export class DashboardComponent implements OnInit {
   public dataSource: any;
 
   public allProducts: Products[] = [];
-
+  public dataSource$: Observable<Products[]> | undefined;
   constructor(private apiProductsService: ApiProductsService, private router: Router) { }
 
   ngOnInit(): void {
     this.apiProductsService.fetchAllProducts().subscribe(products => {
       this.dataSource = products;
     })
+   // this.dataSource$ = this.apiProductsService.fetchAllProducts();
   }
   openEditForm(product: any) {
     console.log('produtc to be edited', product);
@@ -53,6 +55,16 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['add-form']);
   }
 
+  getPriorityColor(priority: string){
+     if (priority === 'low') return '#ade1e5';
+     if (priority === 'medium') return '#73ab84';
+     if (priority === 'high') return 'orange';
+     if (priority === 'very high') return 'red';
+     return ''
+    //   if (this.i_task?.priority === TaskPriority.High) return 'bg-green';
+    //   return 'bg-yellow';
+    // }
+  }
 
 
 }
