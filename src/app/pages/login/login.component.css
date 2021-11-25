@@ -1,0 +1,36 @@
+.loginForm {
+  max-width: 400px;
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.loginInputs {
+  min-height: 100px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input {
+  border: 2px solid purple;
+  padding: 10px;
+}
+
+button {
+  padding: 20px;
+  color: white;
+  font-weight: bolder;
+  background-color: blueviolet;
+  width: 320px;
+}
+
+button:hover {
+  cursor: pointer;
+}

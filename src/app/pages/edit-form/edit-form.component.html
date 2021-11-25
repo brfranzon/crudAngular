@@ -1,0 +1,8 @@
+<div style="display: flex; flex-direction: column">
+  <input value=" {{ productToBeUpdated?._id }}" />
+  <input value=" {{ productToBeUpdated?.title }}" />
+  <input value=" {{ productToBeUpdated?.description }}" />
+  <input value=" {{ productToBeUpdated?.price }}" />
+</div>
+
+<button (click)="confirmEdit(productToBeUpdated?._id!)">Confirm</button>

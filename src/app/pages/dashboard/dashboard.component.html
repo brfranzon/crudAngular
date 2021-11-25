@@ -1,0 +1,32 @@
+<!-- <p>dashboard works!</p>
+
+<ul>
+  <li *ngFor="let product of allProducts">{{ product.title }}</li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let product of dataSource">
+    <div style="display: flex;">
+      <div style="width: 500px;">
+        <span>{{ product.title }}</span>
+        <!-- <span>{{ product.description }}</span>
+        <span>{{ product.priorityDelivery }}</span>
+        <span>{{ product.checkIfProductIsNotAvailable }}</span>
+        <span>{{ product.price }}</span> -->
+      </div>
+      <div style="width: 200px; display: flex; justify-content: space-between;">
+        <button (click)="openEditForm(product)">EDIT</button>
+        <button (click)="deleteProduct(product)">DELETE</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<button (click)="addForm()">ADD</button>
+
+
+<!-- title: string;
+description: string;
+priorityDelivery: 'low' | 'medium' | 'height' | 'very high';
+checkIfProductIsNotAvailable: boolean;
+price: number; -->
